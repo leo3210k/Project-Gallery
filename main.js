@@ -7,5 +7,13 @@
   ]
 
   const main_content = document.querySelector(".image")
+  const thumbnails = document.querySelector(".thumbnails")
+
+  for(let thumbnail of thumbnails.children) {
+    thumbnail.onclick = event => {
+      main_content.src = thumbnail.src
+    }
+  }
+  
   main_content.src = images[0]
 })()
