@@ -21,3 +21,12 @@
   width: 40vw;
   height: 40vh;
 }
+
+.thumbnails {
+  margin-top: 20px;
+  display: flex;
+}
+
+.thumbnails img {
+  width: 25%;
+}
