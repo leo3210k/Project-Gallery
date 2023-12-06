@@ -4,22 +4,26 @@
   let current_image = 0
 
   main_content.src = thumbnails[0].src
-  console.log(thumbnails)
 
-  thumbnails.forEach((thumbnail) => {
+  const changeImage = (thumbnail) => {
+    main_content.src = thumbnail.src
+
+    const active = document.querySelector(".active")
+    active.classList.toggle("active")
+    thumbnail.classList.add("active")
+  }
+
+  thumbnails.forEach((thumbnail, index) => {
     thumbnail.onclick = event => {
-      main_content.src = thumbnail.src
-
-      const active = document.querySelector(".active")
-      active.classList.toggle("active")
-      thumbnail.classList.add("active")
+      changeImage(thumbnail)
+      current_image = index
     }
   })
 
   setInterval(() => {
     if(current_image > 3) current_image = 0
 
-    main_content.src = thumbnails[current_image].src
+    changeImage(thumbnails[current_image])
     current_image++
   }, 1000)
 })()
