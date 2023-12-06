@@ -9,6 +9,10 @@
   thumbnails.forEach((thumbnail) => {
     thumbnail.onclick = event => {
       main_content.src = thumbnail.src
+
+      const active = document.querySelector(".active")
+      active.classList.toggle("active")
+      thumbnail.classList.add("active")
     }
   })
 
