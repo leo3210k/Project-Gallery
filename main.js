@@ -21,7 +21,7 @@
   })
 
   setInterval(() => {
-    if(current_image > 3) current_image = 0
+    if(current_image > thumbnails.length - 1) current_image = 0
 
     changeImage(thumbnails[current_image])
     current_image++
