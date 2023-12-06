@@ -1,19 +1,21 @@
 (() => {
-  const images = [
-    "https://cursinhoparamedicina.com.br/wp-content/uploads/2022/10/Paisagem-1.jpg",
-    "https://thumbs.dreamstime.com/b/belas-fotos-rosa-e-roxo-no-infravermelho-de-paisagens-rurais-na-europa-lindas-infravermelhos-roxos-cor-alemanha-157831242.jpg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU-qQTiRaP8QN13CGPfT9bcU-2ZBJ3yKi0mw&usqp=CAU",
-    "https://blog.solo.ind.br/wp-content/uploads/2021/05/Jiuzhaigou.jpg",
-  ]
-
   const main_content = document.querySelector(".image")
-  const thumbnails = document.querySelector(".thumbnails")
+  const thumbnails = document.querySelectorAll(".thumbnail")
+  let current_image = 0
 
-  for(let thumbnail of thumbnails.children) {
+  main_content.src = thumbnails[0].src
+  console.log(thumbnails)
+
+  thumbnails.forEach((thumbnail) => {
     thumbnail.onclick = event => {
       main_content.src = thumbnail.src
     }
-  }
-  
-  main_content.src = images[0]
+  })
+
+  setInterval(() => {
+    if(current_image > 3) current_image = 0
+
+    main_content.src = thumbnails[current_image].src
+    current_image++
+  }, 1000)
 })()
