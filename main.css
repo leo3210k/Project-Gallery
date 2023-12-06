@@ -14,7 +14,6 @@
 .content {
   width: 40vw;
   height: 60vh;
-  background-color: gray;
 }
 
 .image {
@@ -23,10 +22,20 @@
 }
 
 .thumbnails {
-  margin-top: 20px;
   display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding: 0px 300px;
 }
 
-.thumbnails img {
-  width: 25%;
+.thumbnail {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: gray;
+  opacity: 0.5;
+}
+
+.active {
+  opacity: 1;
 }

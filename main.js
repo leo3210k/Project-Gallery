@@ -4,7 +4,7 @@
   let current_image = 0
 
   const changeImage = (thumbnail) => {
-    main_content.src = thumbnail.src
+    main_content.src = thumbnail.getAttribute('data-src')
 
     const active = document.querySelector(".active")
     active.classList.toggle("active")
