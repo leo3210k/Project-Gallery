@@ -3,8 +3,6 @@
   const thumbnails = document.querySelectorAll(".thumbnail")
   let current_image = 0
 
-  main_content.src = thumbnails[0].src
-
   const changeImage = (thumbnail) => {
     main_content.src = thumbnail.src
 
